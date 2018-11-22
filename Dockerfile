@@ -11,4 +11,6 @@ FROM docker.elastic.co/logstash/logstash:6.5.1@sha256:11ae4d096e177f70c5dca1f464
 # For Logstash documentation visit https://www.elastic.co/guide/en/logstash/current/docker.html
 
 # See https://github.com/docker-library/official-images/pull/5039 for more details.
-RUN wget http://central.maven.org/maven2/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar -O /opt/logstash/lib/mysql-connector-java.jar
+
+RUN  apt-get install -y  wget  \
+  && wget http://central.maven.org/maven2/mysql/mysql-connector-java/8.0.13/mysql-connector-java-8.0.13.jar -O /opt/logstash/lib/mysql-connector-java.jar
